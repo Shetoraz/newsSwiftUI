@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject var networker = Networker()
+    @ObservedObject private var networker = Networker()
 
     var body: some View {
         NavigationView {
@@ -18,10 +18,10 @@ struct ContentView: View {
                 NavigationLink(destination: DetailView(url: post.url)) {
                     HStack {
                         Text(String(post.points))
+                            .bold()
                         Text(post.title)
                     }
                 }
-
             }
             .navigationBarTitle("News")
         }
